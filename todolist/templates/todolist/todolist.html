@@ -1,0 +1,14 @@
+<form class="form-horizontal" action="/todolist/main_page/" method="POST">
+                
+    {% csrf_token %}
+{{ form.non_field_errors }}
+<div class="container" style="font-family: cursive">
+todolist:<br>{{form.list_todo }}<br><br>
+ 
+    <input class="btn btn-primary" type="submit" value="Submit">   
+</form>   
+{% for i in qs %}
+<br>
+{{i.list_todo}}
+<br>
+{% endfor %}
