@@ -8,6 +8,8 @@ def main_page(request):
          form=input(request.POST)
          form.save()
          qs = liste.objects.all()#qs is the query set
+         qs = sorted(qs,key=lambda x:x.id,reverse=True)
+
          return render(request,"todolist/todolist.html",{"qs":qs,"form":form,})
 
         
